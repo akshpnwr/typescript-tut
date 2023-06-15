@@ -26,14 +26,14 @@ function App() {
 
   return (
     <>
-    {/* <h1 onClick={(e)=> changeTitle(e)}>
+    <h1 onClick={(e)=> changeTitle(e)}>
       {title}
     </h1>
     <h1>Typescripting an Object</h1>
     {data.map(item => 
       <Post id={item.id} title={item.title} message={item.message} />
     )  
-  } */}
+  }
     <TodoList />
     </>
   )

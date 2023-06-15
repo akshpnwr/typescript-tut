@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 type tasksProp = string[];
 
@@ -17,9 +17,7 @@ function TodoList() {
         }
     }
 
-    const deleteTask = (e: React.MouseEvent,index: number ) => {
-        console.log(index)
-        
+    const deleteTask = (index: number ) => {
         setTasks([...tasks.slice(0,index), ...tasks.slice(index+1)])
     }
 
@@ -32,7 +30,7 @@ function TodoList() {
         {tasks.map((task, index)=>
             <li key={index}>
                 {task}
-                <button onClick={(event) => deleteTask(event, index)}>delete</button>
+                <button onClick={() => deleteTask(index)}>delete</button>
             </li> 
         )}
        </ul>
