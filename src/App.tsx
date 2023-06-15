@@ -16,15 +16,16 @@ function App() {
 
   const [title, setTitle] = useState<string | null>("Title");
 
-  const changeTitle = () => {
+  const changeTitle = (e: React.MouseEvent) => {
     setTitle("New title");
+    console.log(e.target);
   }
 
   const data = getData();
 
   return (
     <>
-    <h1 onClick={changeTitle}>
+    <h1 onClick={(e)=> changeTitle(e)}>
       {title}
     </h1>
     <h1>Typescripting an Object</h1>
