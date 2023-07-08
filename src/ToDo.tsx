@@ -11,7 +11,6 @@ function TodoList() {
     const addTask = () => {
 
         const newTask = taskRef.current?.value;
-        console.log(newTask)
         if (newTask){
             setTasks([...tasks, newTask])
         }
