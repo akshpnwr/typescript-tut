@@ -179,3 +179,36 @@ handleRequest(reqObj.url, reqObj.method)
 function random(x: string | null) {
     console.log(x?.charAt(1));
 }
+
+
+const constStr = "akash";
+
+let changStr = "akash";
+
+class Car {
+    constructor() {
+        console.log('Car constructor');
+    }
+
+    drive() {
+        console.log('Car drive');
+    }
+}
+
+let c1= new Car();
+
+c1.drive();
+
+function sayhello(name: string) {
+    console.log('Hello ' + name);
+}
+
+sayhello('John');
+
+const coordinates = JSON.parse('{"x": 10, "y": 20}');
+
+const value = JSON.parse('2');
+
+const s: string = JSON.parse('"hello"');
+
+const booleanVal: boolean = JSON.parse('true');
