@@ -212,3 +212,62 @@ const value = JSON.parse('2');
 const s: string = JSON.parse('"hello"');
 
 const booleanVal: boolean = JSON.parse('true');
+
+
+let a: number;
+
+let colors = ['red', 'green', 'blue'];
+
+let foundColor: boolean;
+
+for(let color in  colors) {
+    if(color === 'green') {
+        foundColor = true;
+    }
+}
+foundColor = colors.includes('green');
+
+let numbers = [-10, -1, 12];
+
+let numberAboveZero: (boolean | number)[] = numbers.map((num) => (num > 0 ? num: false));
+
+console.log('numberAboveZero', numberAboveZero);
+
+// type annotations and inference with functions
+const add = (a: number, b: number): number => (a+b);
+
+let r = add(11, 12);
+
+const todaysWeather = {
+    date: new Date(),
+    weather: 'sunny'
+}
+
+// destructuring with annotations
+const logWeather = ({date, weather}: {date: Date, weather: string}): void  => {
+    console.log('Date is ' + date);
+    console.log('Weather is ' + weather);
+}
+
+logWeather(todaysWeather);
+
+// working with objects
+
+const profile = {
+    name: 'John',
+    age: 20,
+    coords: {
+        lat: 0,
+        long: 15
+    },
+    setAge(age: number): void {
+        this.age = age
+    }
+}
+
+const {age}: {age: number} = profile
+
+const  {coords: {lat, long}}: {coords: {lat: number, long: number}} = profile
+
+console.log('lat', lat);
+console.log('long', long);
