@@ -271,3 +271,27 @@ const  {coords: {lat, long}}: {coords: {lat: number, long: number}} = profile
 
 console.log('lat', lat);
 console.log('long', long);
+
+
+// typed arrays
+const carManufacturers = ['ford', 'toyota', 'chevy'];
+
+const upperCaseCarManufacturers = carManufacturers.map((car: string): string => car.toUpperCase())
+
+console.log('upperCaseCarManufacturers', upperCaseCarManufacturers);
+
+class Animal {
+    whatAmI(): void {
+        console.log('animal');
+    }
+}
+
+interface Animal {
+    eat(): void;
+}
+
+class Dog extends Animal {
+    bark(): void {
+        console.log('woof woof');
+    }
+}
