@@ -1,8 +1,16 @@
+interface Mappable {
+    location: {
+        lat: number,
+        lng: number
+    },
+    markerContent(): string
+}
+
 export class CustomMap {
-    map: google.maps.Map;
+    private googleMap: google.maps.Map;
 
     constructor(divId: string) {
-        this.map = new google.maps.Map(document.getElementById(divId) as HTMLElement, {
+        this.googleMap = new google.maps.Map(document.getElementById(divId) as HTMLElement, {
             zoom: 1,
             center: {
                 lat: 0,
@@ -11,12 +19,18 @@ export class CustomMap {
         });
     }
 
-    addMarker(location: { lat: number; lng: number; }, markerName?: string): void{
-        new google.maps.Marker({
-            position: location,
-            map: this.map,
-            label: markerName
+    addMarker(mappable: Mappable): void{
+        const marker = new google.maps.Marker({
+            position: mappable.location,
+            map: this.googleMap,
+        })
+
+        marker.addListener('click', ()=>{
+            const infoWindow = new google.maps.InfoWindow({content: mappable.markerContent()})
+
+            infoWindow.open(this.googleMap, marker);
         })
     }
+    
 }
 
