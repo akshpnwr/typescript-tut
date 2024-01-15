@@ -1,9 +1,11 @@
+import Parent from "./props/Parent"
+
 function App() {
 
   return (
-    <h1>
-      Hello new react typescript app
-    </h1>
+    <>
+      <Parent />
+    </>
   )
 }
 
