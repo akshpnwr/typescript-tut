@@ -1,9 +1,9 @@
-import UserSearch from "./state/UserSearch"
+import GuestList from "./state/GuestList"
 
 function App() {
   return (
     <>
-      <UserSearch />
+      <GuestList />
     </>
   )
 }
